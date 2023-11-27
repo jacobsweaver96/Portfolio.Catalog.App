@@ -1,4 +1,5 @@
 ﻿using Portfolio.Catalog.Wpf.Models;
+using Portfolio.Catalog.Wpf.Models.Services;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -7,20 +8,22 @@ namespace Portfolio.Catalog.Wpf.ViewModels
 {
     public class CatalogViewModel : INotifyPropertyChanged
     {
+        private readonly CatalogService _catalogService;
+
+        public CatalogViewModel()
+        {
+            _catalogService = new CatalogService();
+            var items = _catalogService.GetItems();
+            _items = new ObservableCollection<CatalogItem>(items);
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string name = null)
         {
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(name));
         }
 
-        private ObservableCollection<CatalogItem> _items = new ObservableCollection<CatalogItem>
-        {
-            new CatalogItem { Name="NameA", Description="DescA" },
-            new CatalogItem { Name="NameB", Description="DescB" },
-            new CatalogItem { Name="NameC", Description="DescC" },
-            new CatalogItem { Name="NameD", Description="DescD" },
-        };
-
+        private ObservableCollection<CatalogItem> _items;
         public ObservableCollection<CatalogItem> Items
         {
             get

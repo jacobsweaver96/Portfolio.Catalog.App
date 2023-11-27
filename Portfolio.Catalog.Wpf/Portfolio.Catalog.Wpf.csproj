@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\Services\CatalogService.cs" />
     <Compile Include="ViewModels\CatalogViewModel.cs" />
     <Compile Include="Models\CatalogItem.cs" />
     <Page Include="MainWindow.xaml">
