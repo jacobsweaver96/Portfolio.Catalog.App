@@ -8,11 +8,11 @@ namespace Portfolio.Catalog.Wpf.ViewModels
 {
     public class CatalogViewModel : INotifyPropertyChanged
     {
-        private readonly CatalogService _catalogService;
+        private readonly ICatalogService _catalogService;
 
-        public CatalogViewModel()
+        public CatalogViewModel(ICatalogService catalogService)
         {
-            _catalogService = new CatalogService();
+            _catalogService = catalogService;
             var items = _catalogService.GetItems();
             _items = new ObservableCollection<CatalogItem>(items);
         }

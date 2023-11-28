@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Portfolio.Catalog.Wpf.Models.Services
 {
-    public class CatalogService
+    public class CatalogService : ICatalogService
     {
         public List<CatalogItem> GetItems()
         {

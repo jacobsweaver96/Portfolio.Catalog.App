@@ -6,11 +6,8 @@
         xmlns:local="clr-namespace:Portfolio.Catalog.Wpf"
         xmlns:ViewModels="clr-namespace:Portfolio.Catalog.Wpf.ViewModels"
         mc:Ignorable="d"
-        
+        DataContext="{Binding CatalogViewModel, Source={StaticResource ViewModelLocator}}"
         Title="MainWindow" Height="450" Width="800">
-    <Window.DataContext>
-        <ViewModels:CatalogViewModel />
-    </Window.DataContext>
     <ItemsControl ItemsSource="{Binding Items}">
         <ItemsControl.ItemsPanel>
             <ItemsPanelTemplate>
