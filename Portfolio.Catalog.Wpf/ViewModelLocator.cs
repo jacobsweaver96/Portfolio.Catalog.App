@@ -6,7 +6,7 @@ namespace Portfolio.Catalog.Wpf
     {
         public CatalogViewModel CatalogViewModel
         {
-            get => IocKernel.Get<CatalogViewModel>();
+            get => ContainerKernel.Get<CatalogViewModel>();
         }
     }
 }

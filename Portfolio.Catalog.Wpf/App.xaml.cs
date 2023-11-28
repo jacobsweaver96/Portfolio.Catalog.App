@@ -9,7 +9,7 @@ namespace Portfolio.Catalog.Wpf
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-            IocKernel.Initialize(new IocConfiguration());
+            ContainerKernel.Initialize(new ContainerConfiguration());
 
             base.OnStartup(e);
         }

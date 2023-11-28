@@ -4,7 +4,7 @@ using Portfolio.Catalog.Wpf.ViewModels;
 
 namespace Portfolio.Catalog.Wpf
 {
-    public class IocConfiguration : NinjectModule
+    public class ContainerConfiguration : NinjectModule
     {
         public override void Load()
         {

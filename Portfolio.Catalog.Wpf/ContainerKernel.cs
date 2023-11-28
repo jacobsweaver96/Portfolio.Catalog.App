@@ -3,7 +3,7 @@ using Ninject.Modules;
 
 namespace Portfolio.Catalog.Wpf
 {
-    public static class IocKernel
+    public static class ContainerKernel
     {
         private static StandardKernel _kernel;
 

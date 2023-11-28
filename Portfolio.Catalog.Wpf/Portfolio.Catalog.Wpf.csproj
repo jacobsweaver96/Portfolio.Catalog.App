@@ -58,8 +58,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="IocConfiguration.cs" />
-    <Compile Include="IocKernel.cs" />
+    <Compile Include="ContainerConfiguration.cs" />
+    <Compile Include="ContainerKernel.cs" />
     <Compile Include="Models\Services\CatalogService.cs" />
     <Compile Include="Models\Services\ICatalogService.cs" />
     <Compile Include="ViewModelLocator.cs" />
