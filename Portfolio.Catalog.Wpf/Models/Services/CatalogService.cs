@@ -1,20 +1,16 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Portfolio.Catalog.Wpf.Models.Services
 {
     public class CatalogService : ICatalogService
     {
-        public List<CatalogItem> GetItems()
+        public Task<IList<CatalogItem>> GetItems() => Task.FromResult<IList<CatalogItem>>(new List<CatalogItem>
         {
-            var items = new List<CatalogItem>
-            {
-                new CatalogItem { Name="NameA", Description="DescA" },
-                new CatalogItem { Name="NameB", Description="DescB" },
-                new CatalogItem { Name="NameC", Description="DescC" },
-                new CatalogItem { Name="NameD", Description="DescD" },
-            };
-
-            return items;
-        }
+            new CatalogItem { Id="A", Name="NameA", Description="DescA", Count=1 },
+            new CatalogItem { Id="B", Name="NameB", Description="DescB", Count=2 },
+            new CatalogItem { Id="C", Name="NameC", Description="DescC", Count=3 },
+            new CatalogItem { Id="D", Name="NameD", Description="DescD", Count=4 },
+        });
     }
 }

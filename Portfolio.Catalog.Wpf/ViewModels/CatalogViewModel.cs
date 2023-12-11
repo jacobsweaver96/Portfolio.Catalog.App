@@ -13,8 +13,11 @@ namespace Portfolio.Catalog.Wpf.ViewModels
         public CatalogViewModel(ICatalogService catalogService)
         {
             _catalogService = catalogService;
-            var items = _catalogService.GetItems();
-            _items = new ObservableCollection<CatalogItem>(items);
+            var items = _catalogService.GetItems().Result;
+            foreach (var item in items)
+            {
+                _items.Add(item);
+            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -23,13 +26,10 @@ namespace Portfolio.Catalog.Wpf.ViewModels
             PropertyChanged.Invoke(this, new PropertyChangedEventArgs(name));
         }
 
-        private ObservableCollection<CatalogItem> _items;
+        private ObservableCollection<CatalogItem> _items = new ObservableCollection<CatalogItem>();
         public ObservableCollection<CatalogItem> Items
         {
-            get
-            {
-                return _items;
-            }
+            get => _items;
             set
             {
                 _items = value;

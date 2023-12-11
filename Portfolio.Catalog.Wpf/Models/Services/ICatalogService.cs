@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Portfolio.Catalog.Wpf.Models.Services
 {
     public interface ICatalogService
     {
-        List<CatalogItem> GetItems();
+        Task<IList<CatalogItem>> GetItems();
     }
 }
